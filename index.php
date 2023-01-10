@@ -137,8 +137,11 @@ include 'templates/head.php';
                 <div class="card-body">
                   <p><b style="font-size: 48;"></b>
                   </p>
-                  <p>
-                  <h1></h1>
+                  <p style="text-align: justify;  text-justify: inter-word;"> 
+                  <h1>Sejarah</h1>
+                  Pada tahun 2009 saat pertama dibentuk, Badan Narkotika Nasional Provinsi Kalimantan Selatan berbentuk Pelaksana Harian (Lakhar) Badan Narkotika Provinsi Kalimantan Selatan yang diketuai oleh Wakil Gubernur Kalimantan Selatan, Rosehan NB, dan dikepalai oleh H. Syahbani. Dan sejak tahun 2011 Lakhar Badan Narkotika Provinsi Kalimantan Selatan menjadi instansi vertikal dan sebutannya menjadi Badan Narkotika Nasional Provinsi Kalimantan Selatan.
+Sejak 2011 Badan Narkotika Nasional Provinsi Kalimantan Selatan dipimpin oleh Drs. Agus B Manalu sampai dengan bulan Maret 2015. Drs Agus B Manalu digantikan oleh Drs. Richard M Nainggolan sampai dengan September 2015 yang kemudian digantikan oleh Arnowo SH. M.Si sampai dengan Desember 2016 dan digantikan lagi oleh Drs. Marsauli Siregar, S.H. sampai dengan Desember 2017 dan kemudian digantikan oleh Drs. Nixon Manurung, M.AP., sampai dengan Mei 2019. Dan sekarang Kepala Badan Narkotika Nasional Provinsi Kalimantan Selatan dijabat oleh Drs. Mohamad Aris Purnomo sejak Juli 2019.
+Sebelumnya Kantor Badan Narkotika Nasional Provinsi Kalimantan Selatan bertempat di rumah Kepala Dinas Pendidikan Provinsi Kalimantan Selatan. Kemudian tanggal 1 Oktober pindah ke Ruko Pelangi yang bealamat di Jl. P. Hidayatullah Kelurahan Banua Anyar. Dan atas permohonan Kepala Badan Narkotika Nasional Provinsi Kalimantan Selatan yang telah disetujui oleh Gubernur Kalimantan Selatan untuk menempati eks. Kantor Balitbangda Provinsi Kalimantan Selatan yang beralamat di Jl. D. I. Panjaitan No. 34 Lt. II sejak bulan Juli 2013. Dan pada Agustus 2017 Badan Narkotika Nasional Provinsi Kalimantan Selatan pindah ke Ex Kantor Dinas Perdagangan Provinsi Kalsel yang beralamat Jl. D. I. Panjaitan No. 41.
                   </p>
                   <p>
                   <h1></h1>
