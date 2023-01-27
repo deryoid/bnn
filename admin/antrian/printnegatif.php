@@ -34,16 +34,17 @@ $bln = array(
 
 <body>
 
-    <!-- <img src="<?= base_url('assets/dist/img/logo.png') ?>" align="left" width="90" height="100">
+
+<img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
     <p align="center"><b>
-            <font size="5">PEMERINTAH KABUPATEN TAPIN </font> <br>
-            <font size="5">DINAS TENAGA KERJA</font><br><br><br>
+            <font size="5">BADAN NARKOTIKA NASIONAL</font><br>
+            <font size="5">PROVINSI KALIMANTAN SELATAN</font> <br>
+            <font size="2">Alamat : Jl. D.I. Panjaitan No. 41 Banjarmasin</font>
+            <br>
+            <br>
+            <br>
             <hr size="2px" color="black">
-            <center>
-                <font size="2">Alamat : Jl.Gubernur H.Aberani Sulaiman No.129</font>
-            </center>
-            <hr size="2px" color="black">
-        </b></p> -->
+        </b></p>
     <h3>Data Negatif</h3>
     <div class="row">
         <div class="col-sm-12">

@@ -73,23 +73,23 @@ include '../templates/head.php';
 
 
           <div class="col-md-12">
-          <div class="card">
-          <div class="card-body">
-            
-           <h1>
-           1.	Visi<br>
-           </h1> 
-            <h3>
-  Menjadi Lembaga  Non Kementerian yang profesional dan mampu menggerakkan seluruh koponen masyarakat, bangsa dan negara Indonesia dalam melaksanakan Pencegahan dan Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkotika, Psikotropika, Prekursor dan Bahan Adiktif Lainnya di wilayah Kalimantan Selatan.<br>
-</h3>
-  <h1>
-2.	Misi<br>
-</h1>
-  <h3>
-Bersama Instansi Pemerintah Daerah terkait, komponen masyarakat, bangsa, dan negara melaksanakan Pencegahan dan Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkotika (P4GN) secara sinergis dan integratif di wilayah Kalimantan Selatan.
-</h3>          
-          </div>
-          </div>
+            <div class="card">
+              <div class="card-body">
+
+                <h1>
+                  1. Visi<br>
+                </h1>
+                <h3>
+                  Menjadi Lembaga Non Kementerian yang profesional dan mampu menggerakkan seluruh koponen masyarakat, bangsa dan negara Indonesia dalam melaksanakan Pencegahan dan Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkotika, Psikotropika, Prekursor dan Bahan Adiktif Lainnya di wilayah Kalimantan Selatan.<br>
+                </h3>
+                <h1>
+                  2. Misi<br>
+                </h1>
+                <h3>
+                  Bersama Instansi Pemerintah Daerah terkait, komponen masyarakat, bangsa, dan negara melaksanakan Pencegahan dan Pemberantasan Penyalahgunaan dan Peredaran Gelap Narkotika (P4GN) secara sinergis dan integratif di wilayah Kalimantan Selatan.
+                </h3>
+              </div>
+            </div>
           </div>
           <!-- /.row -->
 

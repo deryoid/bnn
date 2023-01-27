@@ -40,6 +40,16 @@ $bln = array(
 
 <body>
 
+    <img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
+    <p align="center"><b>
+            <font size="5">BADAN NARKOTIKA NASIONAL</font><br>
+            <font size="5">PROVINSI KALIMANTAN SELATAN</font> <br>
+            <font size="2">Alamat : Jl. D.I. Panjaitan No. 41 Banjarmasin</font>
+            <br>
+            <br>
+            <br>
+            <hr size="2px" color="black">
+        </b></p>
     <!-- Kop Here ! -->
     <h3>
         <center><br>
@@ -57,11 +67,11 @@ $bln = array(
                                     <p>
                                         <th width="40%">SEKTOR ATM </th>
                                         <th>
-                                        <ul>
-                                            <li>Kode ATM : <?= $row['kode_barang'] ?></li>
-                                            <li>Nama ATM : <?= $row['nama_barang'] ?></li>
-                                            <li>Tanggal Peletakan : <?= $row['tgl_peletakan'] ?></li>
-                                            <li>Status Engine : <?= $row['status'] ?></li>
+                                            <ul>
+                                                <li>Kode ATM : <?= $row['kode_barang'] ?></li>
+                                                <li>Nama ATM : <?= $row['nama_barang'] ?></li>
+                                                <li>Tanggal Peletakan : <?= $row['tgl_peletakan'] ?></li>
+                                                <li>Status Engine : <?= $row['status'] ?></li>
                                             </ul>
                                         </th>
                                     </p>
@@ -74,7 +84,7 @@ $bln = array(
                                             <ul>
                                                 <li><?= $row['nama_petugas'] ?></li>
                                             </ul>
-                                            
+
                                         </th>
                                     </p>
                                 </tr>
@@ -85,12 +95,12 @@ $bln = array(
                                             <ul>
                                                 <li><?= $row['lokasi_atm'] ?></li>
                                                 <li><a href="<?= $row['link_gmap'] ?>" target="blank" class="fa fa-map-marked-alt"> Lihat Map</a></li>
-                                                </ul>
-                                            </th>
+                                            </ul>
+                                        </th>
                                     </p>
                                 </tr>
                                 <tr>
-                                    
+
                                     <p>
                                         <th>Sebelum Perbaikan </th>
                                         <th>
@@ -102,7 +112,7 @@ $bln = array(
                                     </p>
                                 </tr>
                                 <tr>
-                                    
+
                                     <p>
                                         <th>Sesudah Perbaikan </th>
                                         <th>
@@ -113,7 +123,7 @@ $bln = array(
                                         </th>
                                     </p>
                                 </tr>
-                               
+
                             </b>
                         </thead>
                     </table>
@@ -159,16 +169,16 @@ $bln = array(
     ?>
 
 
-</div>
+    </div>
     <div style="text-align: center; display: inline-block; float: right;">
-  <h5>
-    Banjarmasin , <?php echo tgl_indo(date('Y-m-d')); ?><br>
-    
-    <br><br><br><br>
-    Pimpinan
-  </h5>
+        <h5>
+            Banjarmasin , <?php echo tgl_indo(date('Y-m-d')); ?><br>
 
-</div>
+            <br><br><br><br>
+            Pimpinan
+        </h5>
+
+    </div>
 </body>
 
 </html>
