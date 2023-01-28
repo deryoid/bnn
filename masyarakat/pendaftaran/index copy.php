@@ -49,10 +49,20 @@ include '../../templates/head.php';
                     <div class="row">
                         <div class="col-12">
                             <div class="card card-info card-outline">
+                                <?php
+                                $p = $koneksi->query("SELECT * FROM pendaftaran AS p
+                             LEFT JOIN masyarakat AS pl ON p.id_masyarakat = pl.id_masyarakat 
+                             WHERE p.id_masyarakat = '$_SESSION[id_masyarakat]' ORDER BY p.id_pendaftaran DESC")->fetch_array();
 
-                                <div class="card-header">
-                                    <a href="tambah" class="btn bg-info"><i class="fa fa-plus-circle"> Pendaftaran/Pembuatan</i></a>
-                                </div>
+                                if (count($p) > 0) {
+                                    echo "<div class='card-header'> 
+                                <h4> Anda Sudah melakukan Pengajuan Tidak Dapat Mendaftar Lagi.</h4>
+                                </div>";
+                                } else { ?>
+                                    <div class="card-header">
+                                        <a href="tambah" class="btn bg-info"><i class="fa fa-plus-circle"> Pendaftaran/Pembuatan</i></a>
+                                    </div>
+                                <?php } ?>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <?php

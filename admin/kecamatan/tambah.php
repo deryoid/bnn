@@ -62,9 +62,27 @@ include '../../templates/head.php';
                                     <div class="card-body" style="background-color: white;">
 
                                         <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Kode Kecamatan</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="kode_kecamatan" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Nama Kecamatan</label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control" name="nama_kecamatan" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Kabupaten</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="kabupaten" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Provinsi</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="provinsi" required="">
                                             </div>
                                         </div>
 
@@ -111,11 +129,18 @@ include '../../templates/head.php';
     </script>
     <?php
     if (isset($_POST['submit'])) {
+        $kode_kecamatan = $_POST['kode_kecamatan'];
         $nama_kecamatan = $_POST['nama_kecamatan'];
+        $kabupaten = $_POST['kabupaten'];
+        $provinsi = $_POST['provinsi'];
 
         $submit = $koneksi->query("INSERT INTO kecamatan VALUES (
         NULL,
-        '$nama_kecamatan')");
+        '$kode_kecamatan',
+        '$nama_kecamatan',
+        '$kabupaten',
+        '$provinsi'
+        )");
         // var_dump($submit, $koneksi->error);
         // die();
         if ($submit) {

@@ -65,13 +65,29 @@ $row = $data->fetch_array();
                                     <!-- form start -->
                                     <div class="card-body" style="background-color: white;">
                                         <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Kode Kecamatan</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="kode_kecamatan" value="<?= $row['kode_kecamatan'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Nama Kecamatan</label>
                                             <div class="col-sm-8">
                                                 <input type="text" class="form-control" name="nama_kecamatan" value="<?= $row['nama_kecamatan'] ?>">
                                             </div>
                                         </div>
-
-
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Kabupaten</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="kabupaten" value="<?= $row['kabupaten'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Provinsi</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="provinsi" value="<?= $row['provinsi'] ?>">
+                                            </div>
+                                        </div>
 
 
                                     </div>
@@ -113,11 +129,17 @@ $row = $data->fetch_array();
 
     <?php
     if (isset($_POST['submit'])) {
+        $kode_kecamatan = $_POST['kode_kecamatan'];
         $nama_kecamatan = $_POST['nama_kecamatan'];
+        $kabupaten = $_POST['kabupaten'];
+        $provinsi = $_POST['provinsi'];
 
 
         $submit = $koneksi->query("UPDATE kecamatan SET 
-        nama_kecamatan = '$nama_kecamatan'
+        kode_kecamatan = '$kode_kecamatan',
+        nama_kecamatan = '$nama_kecamatan',
+        kabupaten = '$kabupaten',
+        provinsi = '$provinsi'
         WHERE id_kecamatan = '$id'");
 
 

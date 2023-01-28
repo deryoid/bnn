@@ -71,27 +71,33 @@ include '../../templates/head.php';
                                             <thead class="bg-info">
                                                 <tr align="center">
                                                     <th>No</th>
+                                                    <th>Kode Kecamatan </th>
                                                     <th>Nama Kecamatan </th>
+                                                    <th>Kabupaten </th>
+                                                    <th>Provinsi </th>
                                                     <th>Opsi</th>
                                                 </tr>
                                             </thead>
-                                            <?php
-                                            $no = 1;
-                                            $data = $koneksi->query("SELECT * FROM kecamatan ORDER BY id_kecamatan ASC");
-                                            while ($row = $data->fetch_array()) {
-                                            ?>
-                                                <tbody style="background-color: white">
+                                            <tbody style="background-color: white">
+                                                <?php
+                                                $no = 1;
+                                                $data = $koneksi->query("SELECT * FROM kecamatan ORDER BY id_kecamatan ASC");
+                                                while ($row = $data->fetch_array()) {
+                                                ?>
                                                     <tr>
                                                         <td align="center"><?= $no++ ?></td>
+                                                        <td><?= $row['kode_kecamatan'] ?></td>
                                                         <td><?= $row['nama_kecamatan'] ?></td>
+                                                        <td><?= $row['kabupaten'] ?></td>
+                                                        <td><?= $row['provinsi'] ?></td>
                                                         <td align="center">
                                                             <a href="edit?id=<?= $row['id_kecamatan'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
                                                             <a href="hapus?id=<?= $row['id_kecamatan'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i></a>
 
                                                         </td>
                                                     </tr>
-                                                </tbody>
-                                            <?php } ?>
+                                                <?php } ?>
+                                            </tbody>
                                         </table>
                                     </div>
 

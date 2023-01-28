@@ -51,7 +51,7 @@ include '../../templates/head.php';
                             <div class="card card-info card-outline">
                                 <div class="card-header">
                                     <a href="tambah" class="btn bg-green"><i class="fa fa-plus-circle"> Tambah Data</i></a>
-                                    <a href="print" target="blank" class="btn bg-info"><i class="fa fa-print"> Cetak</i></a>
+                                    <!-- <a href="print" target="blank" class="btn bg-info"><i class="fa fa-print"> Cetak</i></a> -->
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">

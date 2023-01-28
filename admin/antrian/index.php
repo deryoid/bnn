@@ -72,7 +72,11 @@ include '../../templates/head.php';
                                                     <th>No</th>
                                                     <th>Nomor Antrian</th>
                                                     <th>Nama</th>
-                                                    <th>Persyaratan</th>
+                                                    <th>KTP</th>
+                                                    <th>PAS FOTO</th>
+                                                    <th>Ket</th>
+                                                    <th>Perihal</th>
+                                                    <th>Tanggal</th>
                                                     <th>Tanggal</th>
                                                     <th>Hasil Tes</th>
                                                     <th>Status</th>
@@ -95,19 +99,14 @@ include '../../templates/head.php';
                                                             <h4><?= $row['nama_masyarakat'] ?></h4>
                                                         </td>
                                                         <td>
-                                                            <ul>
-                                                                <li>KTP : <a href="<?= base_url(); ?>/filektp/<?= $row['ktp'] ?>" data-toggle="lightbox" data-title="ktp" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat KTP</i></a></li>
-                                                                <li>PAS FOTO : <a href="<?= base_url(); ?>/filefoto/<?= $row['foto'] ?>" data-toggle="lightbox" data-title="foto" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat Foto</i></a></li>
-                                                                <li>Ket : <?= $row['ket'] ?></li>
-                                                                <li>Perihal : <?= $row['perihal'] ?></li>
-                                                            </ul>
+                                                            <a href="<?= base_url(); ?>/filektp/<?= $row['ktp'] ?>" data-toggle="lightbox" data-title="ktp" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat KTP</i></a>
                                                         </td>
-                                                        <td>
-                                                            <ul>
-                                                                <li>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?></li>
-                                                                <li>Tanggal Ambil : <?= $row['tgl_ambil'] ?></li>
-                                                            </ul>
+                                                        <td> <a href="<?= base_url(); ?>/filefoto/<?= $row['foto'] ?>" data-toggle="lightbox" data-title="foto" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat Foto</i></a></td>
+                                                        <td><?= $row['ket'] ?></td>
+                                                        <td><?= $row['perihal'] ?></td>
+                                                        <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>Tanggal
                                                         </td>
+                                                        <td>Ambil : <?= $row['tgl_ambil'] ?></td>
                                                         <td align="center"><b><?= $row['hasil_tes'] ?></b></td>
                                                         <td align="center"><b><?= $row['status_pendaftaran'] ?></b></td>
 

@@ -35,7 +35,7 @@ $bln = array(
 <body>
 
 
-<img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
+    <img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
     <p align="center"><b>
             <font size="5">BADAN NARKOTIKA NASIONAL</font><br>
             <font size="5">PROVINSI KALIMANTAN SELATAN</font> <br>
@@ -52,9 +52,14 @@ $bln = array(
                 <table border="1" cellspacing="0" width="100%">
                     <thead class="bg-info">
                         <tr align="center">
-                            <th>No</th>
+                            <th>No.</th>
+                            <th>Nomor Antrian</th>
                             <th>Nama</th>
-                            <th>Persyaratan</th>
+                            <th>KTP</th>
+                            <th>PAS FOTO</th>
+                            <th>Ket</th>
+                            <th>Perihal</th>
+                            <th>Tanggal</th>
                             <th>Tanggal</th>
                             <th>Hasil Tes</th>
                             <th>Status</th>
@@ -68,25 +73,20 @@ $bln = array(
                     ?>
                         <tbody style="background-color: white">
                             <tr>
+                                <td align="center"><?= $no++ ?></td>
                                 <td align="center">
-                                    <h5><?= $no++ ?></h5>
+                                    <h1><?= $row['nomor_antrian'] ?></h1>
                                 </td>
                                 <td align="center">
-                                    <h3><?= $row['nama_masyarakat'] ?></h3>
+                                    <h4><?= $row['nama_masyarakat'] ?></h4>
                                 </td>
-                                <td>
-                                    <ul>
-                                        <li>KTP : &#10003;</li>
-                                        <li>PAS FOTO : &#10003;</li>
-                                        <li>Perihal : <?= $row['perihal'] ?></li>
-                                        <li>Ket : <?= $row['ket'] ?></li>
-                                    </ul>
+                                <td> &#10003;</td>
+                                <td>&#10003;</td>
+                                <td><?= $row['ket'] ?></td>
+                                <td><?= $row['perihal'] ?></td>
+                                <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>Tanggal
                                 </td>
-                                <td>
-                                    <ul>
-                                        <li>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?></li>
-                                    </ul>
-                                </td>
+                                <td>Ambil : <?= $row['tgl_ambil'] ?></td>
                                 <td align="center"><b><?= $row['hasil_tes'] ?></b></td>
                                 <td align="center"><b><?= $row['status_pendaftaran'] ?></b></td>
                             </tr>

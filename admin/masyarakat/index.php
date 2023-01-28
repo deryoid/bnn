@@ -70,9 +70,12 @@ include '../../templates/head.php';
                                             <thead class="bg-info">
                                                 <tr align="center">
                                                     <th>No</th>
-                                                    <th>Masyarakat </th>
-                                                    <th>username </th>
+                                                    <th>NIK</th>
+                                                    <th>Nama Masyarakat </th>
+                                                    <th>Telp/Wa </th>
+                                                    <th>Username </th>
                                                     <th>E-mail</th>
+                                                    <th>Status Akun</th>
                                                     <th>Opsi</th>
                                                 </tr>
                                             </thead>
@@ -86,14 +89,12 @@ include '../../templates/head.php';
                                                 <tbody style="background-color: white">
                                                     <tr>
                                                         <td align="center"><?= $no++ ?></td>
-                                                        <td>
-                                                            Nama : <?= $row['nama_masyarakat'] ?><br>
-                                                            NIK : <?= $row['nik'] ?><br>
-                                                            Telp/WA : <?= $row['no_wa'] ?><br>
-                                                            Status : <b><?= $row['status'] ?></b><br>
-                                                        </td>
+                                                        <td><?= $row['nik'] ?></td>
+                                                        <td><?= $row['nama_masyarakat'] ?><br></td>
+                                                        <td><?= $row['no_wa'] ?></td>
                                                         <td><b>ID : <?= $row['id_user'] ?> | Username : <?= $row['username'] ?></b></td>
                                                         <td><?= $row['email'] ?></td>
+                                                        <td><b><?= $row['status'] ?></b></td>
                                                         <td align="center">
                                                             <a href="edit?id=<?= $row['id_masyarakat'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
                                                             <a href="hapus?id=<?= $row['id_masyarakat'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i></a>

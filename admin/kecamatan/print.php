@@ -51,21 +51,27 @@ $bln = array(
                     <thead class="bg-info">
                         <tr align="center">
                             <th>No</th>
+                            <th>Kode Kecamatan </th>
                             <th>Nama Kecamatan </th>
+                            <th>Kabupaten </th>
+                            <th>Provinsi </th>
                         </tr>
                     </thead>
-                    <?php
-                    $no = 1;
-                    $data = $koneksi->query("SELECT * FROM kecamatan ORDER BY id_kecamatan ASC");
-                    while ($row = $data->fetch_array()) {
-                    ?>
-                        <tbody style="background-color: white">
+                    <tbody style="background-color: white">
+                        <?php
+                        $no = 1;
+                        $data = $koneksi->query("SELECT * FROM kecamatan ORDER BY id_kecamatan ASC");
+                        while ($row = $data->fetch_array()) {
+                        ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
+                                <td><?= $row['kode_kecamatan'] ?></td>
                                 <td><?= $row['nama_kecamatan'] ?></td>
+                                <td><?= $row['kabupaten'] ?></td>
+                                <td><?= $row['provinsi'] ?></td>
                             </tr>
-                        </tbody>
-                    <?php } ?>
+                        <?php } ?>
+                    </tbody>
                 </table>
             </div>
         </div>

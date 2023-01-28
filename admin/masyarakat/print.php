@@ -51,8 +51,12 @@ $bln = array(
                     <thead class="bg-info">
                         <tr align="center">
                             <th>No</th>
-                            <th>Masyarakat </th>
+                            <th>NIK</th>
+                            <th>Nama Masyarakat </th>
+                            <th>Telp/Wa </th>
+                            <th>Username </th>
                             <th>E-mail</th>
+                            <th>Status Akun</th>
                         </tr>
                     </thead>
                     <?php
@@ -65,13 +69,12 @@ $bln = array(
                         <tbody style="background-color: white">
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td>
-                                    Nama : <?= $row['nama_masyarakat'] ?><br>
-                                    NIK : <?= $row['nik'] ?><br>
-                                    Telp/WA : <?= $row['no_wa'] ?><br>
-                                    Status : <b><?= $row['status'] ?></b><br>
-                                </td>
-                                <td align="center"><?= $row['email'] ?></td>
+                                <td><?= $row['nik'] ?></td>
+                                <td><?= $row['nama_masyarakat'] ?><br></td>
+                                <td><?= $row['no_wa'] ?></td>
+                                <td><b>ID : <?= $row['id_user'] ?> | Username : <?= $row['username'] ?></b></td>
+                                <td><?= $row['email'] ?></td>
+                                <td><b><?= $row['status'] ?></b></td>
                             </tr>
                         </tbody>
                     <?php } ?>
