@@ -19,8 +19,8 @@
             echo "Administrator";
           } elseif ($_SESSION['role'] == "Masyarakat") {
             echo $_SESSION['nama_masyarakat'];
-          } elseif ($_SESSION['role'] == "Kepala") {
-            echo "Kepala";
+          } elseif ($_SESSION['role'] == "Perusahaan") {
+            echo $_SESSION['nama_perusahaan'];
           }
           ?>
         </a>
@@ -89,6 +89,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= base_url('admin/antrianperusahaan') ?>" class="nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Hasil Tes Perusahaan
+              </p>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-print"></i>
@@ -151,6 +159,7 @@
 
     <?php } elseif ($_SESSION['role'] == "Masyarakat") { ?>
 
+
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
@@ -210,6 +219,79 @@
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+
+    <?php } elseif ($_SESSION['role'] == "Perusahaan") { ?>
+
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+        with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="<?= base_url('perusahaan/index') ?>" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-user-edit"></i>
+              <p>
+                Profil
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('perusahaan/profil') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Profil Perusahaan
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('perusahaan/profil/ubahpw') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-lock"></i>
+                  <p>
+                    Ganti Password
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?= base_url('perusahaan/pegawai') ?>" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pegawai
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('perusahaan/pendaftaran') ?>" class="nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Pendaftaran/Pengajuan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url('perusahaan/hasil') ?>" class="nav-link">
+              <i class="nav-icon fas fa-address-card"></i>
+              <p>
+                Hasil Tes
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+
 
     <?php } elseif ($_SESSION['role'] == "Owner") { ?>
 

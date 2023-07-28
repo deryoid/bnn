@@ -143,7 +143,17 @@ if (isset($_POST['login'])) {
       ")->fetch_array();
       $_SESSION['nama_masyarakat']  = $ptg['nama_masyarakat'];
       $_SESSION['id_masyarakat'] = $ptg['id_masyarakat'];
+      $_SESSION['id_user'] = $ptg['id_user'];
       echo "<script>window.location.replace('masyarakat/');</script>";
+    } elseif ($role == "Perusahaan") {
+      $ptg = $koneksi->query("SELECT * FROM perusahaan AS pr 
+      LEFT JOIN user AS u ON pr.id_user = u.id_user
+      WHERE pr.id_user = '$_SESSION[id_user]'
+      ")->fetch_array();
+      $_SESSION['nama_perusahaan']  = $ptg['nama_perusahaan'];
+      $_SESSION['id_perusahaan'] = $ptg['id_perusahaan'];
+      $_SESSION['id_user'] = $ptg['id_user'];
+      echo "<script>window.location.replace('perusahaan/');</script>";
     } elseif ($role == "Owner") {
       echo "<script>window.location.replace('kadis/');</script>";
     }

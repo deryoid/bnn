@@ -29,13 +29,13 @@ include '../../templates/head.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Petugas</h1>
+                            <h1 class="m-0 text-dark">User</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Data Master</li>
-                                <li class="breadcrumb-item active">Petugas</li>
+                                <li class="breadcrumb-item active">User</li>
                                 <li class="breadcrumb-item active">Tambah Data</li>
                             </ol>
                         </div><!-- /.col -->
@@ -55,7 +55,7 @@ include '../../templates/head.php';
                                 <!-- Horizontal Form -->
                                 <div class="card card-primary">
                                     <div class="card-header">
-                                        <h3 class="card-title">Petugas</h3>
+                                        <h3 class="card-title">User</h3>
                                     </div>
                                     <!-- /.card-header -->
                                     <!-- form start -->
@@ -87,6 +87,7 @@ include '../../templates/head.php';
                                                     <option value="">-Pilih-</option>
                                                     <option value="Administrator">Administrator</option>
                                                     <option value="Masyarakat">Masyarakat</option>
+                                                    <option value="Perusahaan">Perusahaan</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -157,6 +158,9 @@ include '../../templates/head.php';
             if ($role == "Masyarakat") {
                 $tkn =  $koneksi->query("SELECT * FROM user ORDER BY id_user DESC LIMIT 1")->fetch_array();
                 $koneksi->query("INSERT INTO masyarakat (id_user, nama_masyarakat , status) VALUES ('$tkn[id_user]', '$tkn[username]', 'Tidak Aktif')");
+            } elseif ($role == "Perusahaan") {
+                $tkn =  $koneksi->query("SELECT * FROM user ORDER BY id_user DESC LIMIT 1")->fetch_array();
+                $koneksi->query("INSERT INTO perusahaan (id_user, nama_perusahaan , status) VALUES ('$tkn[id_user]', '$tkn[username]', 'Aktif')");
             }
             $_SESSION['pesan'] = "Data Berhasil Ditambahkan";
             echo "<script>window.location.replace('../user/');</script>";

@@ -95,6 +95,9 @@ $row = $data->fetch_array();
                                                     <option value="Masyarakat" <?php if ($row['role'] == "Masyarakat") {
                                                                                     echo "selected";
                                                                                 } ?>>Masyarakat</option>
+                                                    <option value="Perusahaan" <?php if ($row['role'] == "Perusahaan") {
+                                                                                    echo "selected";
+                                                                                } ?>>Perusahaan</option>
                                                 </select>
                                             </div>
                                         </div>
