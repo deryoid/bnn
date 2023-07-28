@@ -35,7 +35,7 @@ $data = $koneksi->query("SELECT * FROM perusahaan WHERE id_perusahaan = '$_SESSI
             <div class="card-header">
               <h3 class="card-title float-right">
                 <a href="edit" class="btn btn-success"><i class="fa fa-edit mr-1"></i>Update Profil Perusahaan</a>
-                <a href="print?id=<?= $data['id_perusahaan']; ?>" class="btn btn-primary" target="blank"><i class="fa fa-print mr-1"></i>Print Biodata</a>
+                <!-- <a href="print?id=<?= $data['id_perusahaan']; ?>" class="btn btn-primary" target="blank"><i class="fa fa-print mr-1"></i>Print Biodata</a> -->
               </h3>
             </div>
 

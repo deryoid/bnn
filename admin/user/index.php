@@ -87,7 +87,7 @@ include '../../templates/head.php';
                                                         <td><?= $row['username'] ?></td>
                                                         <td><?= $row['role'] ?></td>
                                                         <td align="center">
-                                                            <?php if ($row['role'] != 'Masyarakat') { ?>
+                                                            <?php if ($row['role'] != 'Masyarakat' and $row['role'] != 'Perusahaan') { ?>
                                                                 <a href="edit?id=<?= $row['id_user'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
                                                             <?php } else { ?>
                                                                 <a href="edit?id=<?= $row['id_user'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a>
