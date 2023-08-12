@@ -109,7 +109,7 @@ include 'templates/head.php';
           <form class="form-horizontal" method="POST" action="" enctype="multipart/form-data">
 
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <!-- Horizontal Form -->
                 <div class="card card-info">
                   <div class="card-header">
@@ -118,27 +118,64 @@ include 'templates/head.php';
                   <!-- /.card-header -->
                   <!-- form start -->
                   <div class="card-body" style="background-color: white;">
-
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label">Username</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" name="username" required="">
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-8">
-                        <input type="password" class="form-control form-pass" name="password" required="">
-                        <div class="border-checkbox-group border-checkbox-group-primary">
-                          <small>
-                            <input class="border-checkbox form-cek" type="checkbox" id="checkbox1">
-                            <label class="border-checkbox-label" for="checkbox1">Tampilkan Password</label>
-                          </small>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">Nama</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nama_masyarakat" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">NIK</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nik" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">Email</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="email" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">JK</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="jk" required="">
+                          </div>
                         </div>
                       </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">Alamat</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="alamat" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">Pekerjaan</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="pekerjaan" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">No WA</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="no_wa" required="">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-sm-4 col-form-label">Username</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" name="username" required="">
+                          </div>
+                        </div>
+
+                        <input type="hidden" class="form-control form-pass" name="password" value="bnn12345">
+                      </div>
+                      <input type="hidden" class="form-control form-pass" name="role" value="Masyarakat">
                     </div>
-                    <input type="hidden" class="form-control form-pass" name="role" value="Masyarakat">
+
                   </div>
                   <!-- /.card-body -->
 
@@ -147,29 +184,30 @@ include 'templates/head.php';
                     <button type="submit" name="submit" class="btn bg-gradient-success float-right mr-2"><i class="fa fa-save"> Daftar</i></button>
                   </div>
                   <!-- /.card-footer -->
-
                 </div>
 
               </div>
-              <!--/.col (left) -->
+
             </div>
+            <!--/.col (left) -->
+        </div>
 
-          </form>
+        </form>
 
-        </div><!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
+    </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 
-    </div>
-    <!-- /.content-wrapper -->
-    <?php
-    include 'templates/footer.php';
-    ?>
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+  </div>
+  <!-- /.content-wrapper -->
+  <?php
+  include 'templates/footer.php';
+  ?>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -195,6 +233,12 @@ include 'templates/head.php';
     $username = $_POST['username'];
     $password = md5($_POST['password']);
     $role  = $_POST['role'];
+    $nik  = $_POST['nik'];
+    $email  = $_POST['email'];
+    $jk  = $_POST['jk'];
+    $alamat  = $_POST['alamat'];
+    $pekerjaan  = $_POST['pekerjaan'];
+    $no_wa  = $_POST['no_wa'];
 
     $submit = $koneksi->query("INSERT INTO user VALUES (
         NULL,
@@ -205,7 +249,26 @@ include 'templates/head.php';
     if ($submit) {
       if ($role == "Masyarakat") {
         $tkn =  $koneksi->query("SELECT * FROM user ORDER BY id_user DESC LIMIT 1")->fetch_array();
-        $koneksi->query("INSERT INTO masyarakat (id_user, nama_masyarakat , status) VALUES ('$tkn[id_user]', '$tkn[username]', 'Tidak Aktif')");
+        $koneksi->query("INSERT INTO masyarakat (
+          id_user,
+          nama_masyarakat, 
+          nik, 
+          email, 
+          jk, 
+          alamat, 
+          pekerjaan, 
+          no_wa, 
+          status
+          ) VALUES (
+            '$tkn[id_user]',
+            '$tkn[username]',
+            '$nik',
+            '$email',
+            '$jk',
+            '$alamat',
+            '$pekerjaan',
+            '$no_wa',
+            'Tidak Aktif')");
       }
       $_SESSION['pesan'] = "Data Berhasil Ditambahkan";
       echo "<script>window.location.replace('index');</script>";

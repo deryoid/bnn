@@ -76,7 +76,7 @@ include '../../templates/head.php';
                                                                     <ul>
                                                                         <li>
                                                                             Nama : <?= $row['nama_pegawai'] ?><br>
-                                                                            Perusahaan : <?= $row['nama_perusahaan'] ?>
+                                                                            Kolektif : <?= $row['nama_perusahaan'] ?>
                                                                         </li>
                                                                         <li>KTP : <a href="<?= base_url(); ?>/filektp/<?= $row['ktp'] ?>" data-toggle="lightbox" data-title="ktp" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat KTP</i></a></li>
 

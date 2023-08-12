@@ -19,7 +19,7 @@ function set_nomor_antri($angka)
 <?php
 include '../../templates/head.php';
 $tgl      = date('Y-m-d');
-$ceknomor = $koneksi->query("SELECT MAX(nomor_antrian) AS nomor FROM pendaftaran WHERE tgl_pendaftaran = '$tgl'")->fetch_array();
+$ceknomor = $koneksi->query("SELECT MAX(nomor_antrian) AS nomor FROM pendaftaran_pegawai WHERE tgl_pendaftaran = '$tgl'")->fetch_array();
 // var_dump($ceknomor['nomor']);
 $ambilnomor = $ceknomor['nomor'] + 1;
 $no_antri = set_nomor_antri($ambilnomor);
@@ -79,7 +79,7 @@ $no_antri = set_nomor_antri($ambilnomor);
                                     <!-- /.card-header -->
                                     <!-- form start -->
                                     <div class="card-body" style="background-color: white;">
-                                        <input type="text" class="form-control" value="<?= $_SESSION['id_perusahaan'] ?>" name="id_perusahaan">
+                                        <input type="hidden" class="form-control" value="<?= $_SESSION['id_perusahaan'] ?>" name="id_perusahaan">
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Nomor Antrian</label>
                                             <div class="col-sm-10">

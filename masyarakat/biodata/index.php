@@ -69,7 +69,12 @@ include '../../templates/sidebar.php';
                         <dt class="col-sm-4">TELP/WA </dt>
                         <dd class="col-sm-8"><?php echo ": " . $data['no_wa']; ?></dd>
                         <dt class="col-sm-4">STATUS AKUN </dt>
-                        <dd class="col-sm-8"> <?php echo ": <span class='badge badge-info fa fa-info-circle'> " . $data['status']. "</span>"; ?></dd>
+                        <dd class="col-sm-8"> <?php echo ": <span class='badge badge-info fa fa-info-circle'> " . $data['status'] . "</span>"; ?>
+                          <form class="form-horizontal" method="post" action="">
+                            <input type="hidden" class="form-control" name="status" value="Aktif">
+                            <button type="submit" name="verif" class="btn btn-success btn-xs"><i class="fa fa-check mr-2"></i>Verifikasi Akun</button>
+                          </form>
+                        </dd>
 
                       </dl>
                     </div>
@@ -116,3 +121,18 @@ include '../../templates/sidebar.php';
 include '../../templates/footer.php';
 include_once '../../templates/script.php';
 ?>
+
+<?php
+if (isset($_POST['verif'])) {
+  $status = $_POST['status'];
+
+
+
+  $submit = $koneksi->query("UPDATE masyarakat SET status = '$status' WHERE id_user = '$data[id_user]'");
+
+
+  if ($submit) {
+    $_SESSION['pesan'] = "Data Berhasil Diverifikasi";
+    echo "<script>window.location.replace('index');</script>";
+  }
+}

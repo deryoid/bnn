@@ -30,12 +30,12 @@ include '../../templates/head.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Pembuatan Baru Kolektif</h1>
+                            <h1 class="m-0 text-dark">Penyuluhan</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <!-- <li class="breadcrumb-item"><a href="#">Data Master</a></li> -->
-                                <li class="breadcrumb-item active">Pembuatan Baru Kolektif</li>
+                                <li class="breadcrumb-item"><a href="#">Data Master</a></li>
+                                <li class="breadcrumb-item active">Penyuluhan</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -48,8 +48,9 @@ include '../../templates/head.php';
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card card-primary card-outline">
+                            <div class="card card-info card-outline">
                                 <div class="card-header">
+                                    <a href="tambah" class="btn bg-info"><i class="fa fa-plus-circle"> Tambah Data</i></a>
                                     <a href="print" target="blank" class="btn bg-info"><i class="fa fa-print"> Cetak</i></a>
                                 </div>
                                 <!-- /.card-header -->
@@ -70,58 +71,33 @@ include '../../templates/head.php';
                                             <thead class="bg-info">
                                                 <tr align="center">
                                                     <th>No</th>
-                                                    <th>Nomor Antrian</th>
-                                                    <th>Kolektif</th>
-                                                    <th>Nama</th>
-                                                    <th>KTP</th>
-                                                    <th>PAS FOTO</th>
-                                                    <th>Ket</th>
-                                                    <th>Perihal</th>
-                                                    <th>Tanggal</th>
-                                                    <th>Tanggal</th>
-                                                    <th>Hasil Tes</th>
-                                                    <th>Status</th>
+                                                    <th>Nama Kegiatan </th>
+                                                    <th>Tanggal </th>
+                                                    <th>Lokasi </th>
+                                                    <th>Deskripsi </th>
                                                     <th>Opsi</th>
                                                 </tr>
                                             </thead>
-                                            <?php
-                                            $no = 1;
-                                            $data = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
-                                            LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
-                                            LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan
-                                            ");
-                                            while ($row = $data->fetch_array()) {
-                                            ?>
-                                                <tbody style="background-color: white">
+                                            <tbody style="background-color: white">
+                                                <?php
+                                                $no = 1;
+                                                $data = $koneksi->query("SELECT * FROM penyuluhan ORDER BY id_penyuluhan ASC");
+                                                while ($row = $data->fetch_array()) {
+                                                ?>
                                                     <tr>
                                                         <td align="center"><?= $no++ ?></td>
+                                                        <td><?= $row['nama_kegiatan'] ?></td>
+                                                        <td><?= $row['tanggal_kegiatan'] ?></td>
+                                                        <td><?= $row['lokasi_kegiatan'] ?></td>
+                                                        <td><?= $row['deskripsi_kegiatan'] ?></td>
                                                         <td align="center">
-                                                            <h1><?= $row['nomor_antrian'] ?></h1>
-                                                        </td>
-                                                        <td align="center">
-                                                            <h3><?= $row['nama_perusahaan'] ?></h3>
-                                                        </td>
-                                                        <td align="center">
-                                                            <h4><?= $row['nama_pegawai'] ?></h4>
-                                                        </td>
-                                                        <td>
-                                                            <a href="<?= base_url(); ?>/filektp/<?= $row['ktp'] ?>" data-toggle="lightbox" data-title="ktp" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat KTP</i></a>
-                                                        </td>
-                                                        <td> <a href="<?= base_url(); ?>/filefoto/<?= $row['foto'] ?>" data-toggle="lightbox" data-title="foto" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat Foto</i></a></td>
-                                                        <td><?= $row['ket'] ?></td>
-                                                        <td><?= $row['perihal'] ?></td>
-                                                        <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>Tanggal
-                                                        </td>
-                                                        <td>Ambil : <?= $row['tgl_ambil'] ?></td>
-                                                        <td align="center"><b><?= $row['hasil_tes'] ?></b></td>
-                                                        <td align="center"><b><?= $row['status_pendaftaran'] ?></b></td>
+                                                            <!-- <a href="edit?id=<?= $row['id_penyuluhan'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a> -->
+                                                            <a href="hapus?id=<?= $row['id_penyuluhan'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i></a>
 
-                                                        <td align="center">
-                                                            <a href="edit?id=<?= $row['id_pendaftaran_pegawai'] ?>" class="btn btn-primary btn-sm" title="Edit"><i class="fa fa-edit"> Proses</i></a>
                                                         </td>
                                                     </tr>
-                                                </tbody>
-                                            <?php } ?>
+                                                <?php } ?>
+                                            </tbody>
                                         </table>
                                     </div>
 

@@ -73,6 +73,14 @@
           </li>
 
           <li class="nav-item">
+            <a href="<?= base_url('admin/penyuluhan') ?>" class="nav-link">
+              <i class="nav-icon fas fa-calendar-check"></i>
+              <p>
+                Penyuluhan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="<?= base_url('admin/masyarakat') ?>" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -93,7 +101,7 @@
             <a href="<?= base_url('admin/antrianperusahaan') ?>" class="nav-link">
               <i class="nav-icon fas fa-address-card"></i>
               <p>
-                Hasil Tes Perusahaan
+                Hasil Tes Kolektif
               </p>
             </a>
           </li>

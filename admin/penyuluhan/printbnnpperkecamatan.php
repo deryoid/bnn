@@ -34,7 +34,7 @@ $bln = array(
 
 <body>
 
-    <img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
+<img src="<?= base_url('assets/dist/img/bnn.png') ?>" align="left" width="90" height="100">
     <p align="center"><b>
             <font size="5">BADAN NARKOTIKA NASIONAL</font><br>
             <font size="5">PROVINSI KALIMANTAN SELATAN</font> <br>
@@ -50,48 +50,27 @@ $bln = array(
                 <table border="1" cellspacing="0" width="100%">
                     <thead class="bg-info">
                         <tr align="center">
-                            <th>No.</th>
-                            <th>Nomor Antrian</th>
-                            <th>Nama Kolektif</th>
-                            <th>Nama Pegawai</th>
-                            <th>KTP</th>
-                            <th>PAS FOTO</th>
-                            <th>Ket</th>
-                            <th>Perihal</th>
-                            <th>Tanggal</th>
-                            <th>Tanggal</th>
-                            <th>Hasil Tes</th>
-                            <th>Status</th>
+                            <th>No</th>
+                            <th>Nama Kecamatan </th>
+                            <th>Jumlah Negatif</th>
+                            <th>Jumlah Positif</th>
                         </tr>
                     </thead>
                     <?php
                     $no = 1;
-                    $data = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
-                    LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
-                    LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan");
+                    $data = $koneksi->query("SELECT p.hasil_tes = 'Negatif' AS phn,p.hasil_tes = 'Positif' AS php, k.nama_kecamatan FROM pendaftaran AS p
+                    LEFT JOIN kecamatan AS k ON p.id_kecamatan = k.id_kecamatan
+                    ");
+                    // $row1 = mysqli_num_rows($data1);
+                    // $row2 = mysqli_num_rows($data2);
                     while ($row = $data->fetch_array()) {
                     ?>
                         <tbody style="background-color: white">
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td align="center">
-                                    <h1><?= $row['nomor_antrian'] ?></h1>
-                                </td>
-                                <td align="center">
-                                    <h3><?= $row['nama_perusahaan'] ?></h3>
-                                </td>
-                                <td align="center">
-                                    <h4><?= $row['nama_pegawai'] ?></h4>
-                                </td>
-                                <td> &#10003;</td>
-                                <td>&#10003;</td>
-                                <td><?= $row['ket'] ?></td>
-                                <td><?= $row['perihal'] ?></td>
-                                <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>Tanggal
-                                </td>
-                                <td>Ambil : <?= $row['tgl_ambil'] ?></td>
-                                <td align="center"><b><?= $row['hasil_tes'] ?></b></td>
-                                <td align="center"><b><?= $row['status_pendaftaran'] ?></b></td>
+                                <td><?= $row['nama_kecamatan'] ?></td>
+                                <td><?= $row['phn'] ?></td>
+                                <td><?= $row['php'] ?></td>
                             </tr>
                         </tbody>
                     <?php } ?>

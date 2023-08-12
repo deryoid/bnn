@@ -30,12 +30,12 @@ include '../../templates/head.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Hasil Tes Pegawai Perusahaan</h1>
+                            <h1 class="m-0 text-dark">Hasil Tes Pegawai Kolektif</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <!-- <li class="breadcrumb-item"><a href="#">Data Master</a></li> -->
-                                <li class="breadcrumb-item active">Hasil Tes Pegawai Perusahaan</li>
+                                <li class="breadcrumb-item active">Hasil Tes Pegawai Kolektif</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -71,7 +71,7 @@ include '../../templates/head.php';
                                                 <tr align="center">
                                                     <th>No</th>
                                                     <th>Nomor Antrian</th>
-                                                    <th>Perusahaan</th>
+                                                    <th>Kolektif</th>
                                                     <th>Nama</th>
                                                     <th>KTP</th>
                                                     <th>PAS FOTO</th>

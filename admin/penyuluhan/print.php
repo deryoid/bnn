@@ -49,52 +49,30 @@ $bln = array(
             <div class="card-box table-responsive">
                 <table border="1" cellspacing="0" width="100%">
                     <thead class="bg-info">
-                        <tr align="center">
-                            <th>No.</th>
-                            <th>Nomor Antrian</th>
-                            <th>Nama Kolektif</th>
-                            <th>Nama Pegawai</th>
-                            <th>KTP</th>
-                            <th>PAS FOTO</th>
-                            <th>Ket</th>
-                            <th>Perihal</th>
-                            <th>Tanggal</th>
-                            <th>Tanggal</th>
-                            <th>Hasil Tes</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <?php
-                    $no = 1;
-                    $data = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
-                    LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
-                    LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan");
-                    while ($row = $data->fetch_array()) {
-                    ?>
-                        <tbody style="background-color: white">
+                        <thead class="bg-info">
+                            <tr align="center">
+                                <th>No</th>
+                                <th>Nama Kegiatan </th>
+                                <th>Tanggal </th>
+                                <th>Lokasi </th>
+                                <th>Deskripsi </th>
+                            </tr>
+                        </thead>
+                    <tbody style="background-color: white">
+                        <?php
+                        $no = 1;
+                        $data = $koneksi->query("SELECT * FROM penyuluhan ORDER BY id_penyuluhan ASC");
+                        while ($row = $data->fetch_array()) {
+                        ?>
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
-                                <td align="center">
-                                    <h1><?= $row['nomor_antrian'] ?></h1>
-                                </td>
-                                <td align="center">
-                                    <h3><?= $row['nama_perusahaan'] ?></h3>
-                                </td>
-                                <td align="center">
-                                    <h4><?= $row['nama_pegawai'] ?></h4>
-                                </td>
-                                <td> &#10003;</td>
-                                <td>&#10003;</td>
-                                <td><?= $row['ket'] ?></td>
-                                <td><?= $row['perihal'] ?></td>
-                                <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>Tanggal
-                                </td>
-                                <td>Ambil : <?= $row['tgl_ambil'] ?></td>
-                                <td align="center"><b><?= $row['hasil_tes'] ?></b></td>
-                                <td align="center"><b><?= $row['status_pendaftaran'] ?></b></td>
+                                <td><?= $row['nama_kegiatan'] ?></td>
+                                <td><?= $row['tanggal_kegiatan'] ?></td>
+                                <td><?= $row['lokasi_kegiatan'] ?></td>
+                                <td><?= $row['deskripsi_kegiatan'] ?></td>
                             </tr>
-                        </tbody>
-                    <?php } ?>
+                        <?php } ?>
+                    </tbody>
                 </table>
             </div>
         </div>

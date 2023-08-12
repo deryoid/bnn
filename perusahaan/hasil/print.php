@@ -52,7 +52,7 @@ $bln = array(
                         <tr align="center">
                             <th>No.</th>
                             <th>Nomor Antrian</th>
-                            <th>Nama Perusahaan</th>
+                            <th>Nama Kolektif</th>
                             <th>Nama Pegawai</th>
                             <th>KTP</th>
                             <th>PAS FOTO</th>
