@@ -62,13 +62,13 @@ $data = $koneksi->query("SELECT * FROM perusahaan WHERE id_perusahaan = '$_SESSI
                         <dt class="col-sm-4">Jenis Perusahaan </dt>
                         <dd class="col-sm-8"><?php echo ": " . $data['jenis']; ?></dd>
                         <dt class="col-sm-4">Mail </dt>
-                        <dd class="col-sm-8"><?php echo ": " . $data['email']; ?></dd>
+                        <dd class="col-sm-8"><?php echo ": " . $data['email_perusahaan']; ?></dd>
                         <dt class="col-sm-4">Alamat </dt>
-                        <dd class="col-sm-8"><?php echo ": " . $data['alamat']; ?></dd>
+                        <dd class="col-sm-8"><?php echo ": " . $data['alamat_perusahaan']; ?></dd>
                         <dt class="col-sm-4">Bidang </dt>
                         <dd class="col-sm-8"><?php echo ": " . $data['bidang']; ?></dd>
                         <dt class="col-sm-4">TELP/WA </dt>
-                        <dd class="col-sm-8"><?php echo ": " . $data['no_wa']; ?></dd>
+                        <dd class="col-sm-8"><?php echo ": " . $data['no_perusahaan']; ?></dd>
                         <dt class="col-sm-4">STATUS AKUN </dt>
                         <dd class="col-sm-8"> <?php echo ": <span class='badge badge-info fa fa-info-circle'> " . $data['status'] . "</span>"; ?></dd>
 

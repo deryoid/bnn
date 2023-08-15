@@ -65,6 +65,7 @@ $bln = array(
                     $no = 1;
                     $data = $koneksi->query("SELECT * FROM pegawai AS p
                                             LEFT JOIN perusahaan AS pr ON p.id_perusahaan = pr.id_perusahaan
+                                            WHERE p.id_perusahaan = '$_SESSION[id_perusahaan]'
                                             ORDER BY p.id_pegawai DESC");
                     while ($row = $data->fetch_array()) {
                     ?>

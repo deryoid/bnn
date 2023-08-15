@@ -1,12 +1,12 @@
-<?php 
+<?php
 $host = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $name = "bnn";
 
 $koneksi = mysqli_connect($host, $user, $password, $name);
 
 if (!$koneksi) {
-   die("Gagal Terkoneksi".mysqli_connect_errno()." - ".mysqli_connect_error());
-   exit();
- }
+  die("Gagal Terkoneksi" . mysqli_connect_errno() . " - " . mysqli_connect_error());
+  exit();
+}

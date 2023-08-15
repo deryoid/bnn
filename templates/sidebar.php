@@ -122,8 +122,8 @@
             </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?= base_url('admin/kecamatan/print') ?>" target="blank" class="nav-link">
-                  <p>Kecamatan</p>
+                <a href="<?= base_url('admin/penyuluhan/print') ?>" target="blank" class="nav-link">
+                  <p>Penyuluhan</p>
                 </a>
               </li>
             </ul>
@@ -146,6 +146,13 @@
               <li class="nav-item">
                 <a href="<?= base_url('admin/antrian/printpositif') ?>" target="blank" class="nav-link">
                   <p>Positif</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('admin/antrianperusahaan/print') ?>" target="blank" class="nav-link">
+                  <p>Hasil Tes Kolektif</p>
                 </a>
               </li>
             </ul>

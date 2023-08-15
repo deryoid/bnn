@@ -1,4 +1,13 @@
 <?php
+//ini wajib dipanggil paling atas
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//ini sesuaikan foldernya ke file 3 ini
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 require 'config/config.php';
 require 'config/koneksi.php';
 ?>
@@ -231,6 +240,7 @@ include 'templates/head.php';
   <?php
   if (isset($_POST['submit'])) {
     $username = $_POST['username'];
+    $nama_masyarakat = $_POST['nama_masyarakat'];
     $password = md5($_POST['password']);
     $role  = $_POST['role'];
     $nik  = $_POST['nik'];
@@ -239,6 +249,8 @@ include 'templates/head.php';
     $alamat  = $_POST['alamat'];
     $pekerjaan  = $_POST['pekerjaan'];
     $no_wa  = $_POST['no_wa'];
+    $judul = "Selamat telah melakukan pendaftaran Pengajuan Tes Narkoba BNNP Kalsel";
+    $pesan = "Akun anda telah aktif " . $username . " Password anda adalah : bnn12345";
 
     $submit = $koneksi->query("INSERT INTO user VALUES (
         NULL,
@@ -261,7 +273,7 @@ include 'templates/head.php';
           status
           ) VALUES (
             '$tkn[id_user]',
-            '$tkn[username]',
+            '$nama_masyarakat',
             '$nik',
             '$email',
             '$jk',
@@ -270,12 +282,45 @@ include 'templates/head.php';
             '$no_wa',
             'Tidak Aktif')");
       }
+
+      //Create an instance; passing `true` enables exceptions
+      $mail = new PHPMailer(true);
+
+      try {
+        //Server settings
+        $mail->SMTPDebug = 2;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'bnnvidia@gmail.com';                     //SMTP username
+        $mail->Password   = 'atrgjnxorbahiplk';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+        //pengirim
+        $mail->setFrom('bnnvidia@gmail.com', 'BNNP Kalimantan Selatan');
+        $mail->addAddress($email);     //Add a recipient
+
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = $judul;
+        $mail->Body    = $pesan;
+        $mail->AltBody = '';
+        //$mail->AddEmbeddedImage('gambar/logo.png', 'logo'); //abaikan jika tidak ada logo
+        //$mail->addAttachment(''); 
+
+        $mail->send();
+        echo 'Message has been sent';
+      } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      }
       $_SESSION['pesan'] = "Data Berhasil Ditambahkan";
       echo "<script>window.location.replace('index');</script>";
     }
   }
 
   ?>
+
 </body>
 
 </html>

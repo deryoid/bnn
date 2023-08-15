@@ -51,7 +51,7 @@ $data = $koneksi->query("SELECT * FROM perusahaan WHERE id_user = '$_SESSION[id_
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">EMAIL</label>
                                     <div class="col-sm-8">
-                                        <input type="email" class="form-control" name="email" required="" value="<?= $data['email'] ?>">
+                                        <input type="email" class="form-control" name="email_perusahaan" required="" value="<?= $data['email_perusahaan'] ?>">
                                     </div>
                                 </div>
 
@@ -76,7 +76,7 @@ $data = $koneksi->query("SELECT * FROM perusahaan WHERE id_user = '$_SESSION[id_
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">ALAMAT</label>
                                     <div class="col-sm-8">
-                                        <textarea type="text" class="form-control" name="alamat" required=""><?= $data['alamat'] ?></textarea>
+                                        <textarea type="text" class="form-control" name="alamat_perusahaan" required=""><?= $data['alamat_perusahaan'] ?></textarea>
                                     </div>
                                 </div>
 
@@ -92,7 +92,7 @@ $data = $koneksi->query("SELECT * FROM perusahaan WHERE id_user = '$_SESSION[id_
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">TELP/WA</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="no_wa" required="" value="<?= $data['no_wa'] ?>">
+                                        <input type="text" class="form-control" name="no_perusahaan" required="" value="<?= $data['no_perusahaan'] ?>">
                                     </div>
                                 </div>
 
@@ -125,21 +125,21 @@ include '../../templates/script.php';
 if (isset($_POST['submit'])) {
     $nama_perusahaan            = $_POST['nama_perusahaan'];
     $nama_pimpinan           = $_POST['nama_pimpinan'];
-    $email             = $_POST['email'];
+    $email_perusahaan             = $_POST['email_perusahaan'];
     $jenis           = $_POST['jenis'];
-    $alamat           = $_POST['alamat'];
+    $alamat_perusahaan           = $_POST['alamat_perusahaan'];
     $bidang          = $_POST['bidang'];
-    $no_wa          = $_POST['no_wa'];
+    $no_perusahaan          = $_POST['no_perusahaan'];
 
 
     $submit = $koneksi->query("UPDATE perusahaan SET 
                             nama_perusahaan = '$nama_perusahaan',
                             nama_pimpinan = '$nama_pimpinan',
-                            email = '$email',
+                            email_perusahaan = '$email_perusahaan',
                             jenis = '$jenis',
-                            alamat = '$alamat',
+                            alamat_perusahaan = '$alamat_perusahaan',
                             bidang = '$bidang', 
-                            no_wa = '$no_wa'
+                            no_perusahaan = '$no_perusahaan'
                             WHERE id_perusahaan = '$data[id_perusahaan]'");
 
 

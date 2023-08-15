@@ -66,84 +66,63 @@ include '../../templates/head.php';
                                     }
                                     ?>
 
-                                    <?php
-                                    $list = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
-                                            LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
-                                            LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan
-                                            WHERE p.status_pendaftaran = 'Selesai' ORDER BY p.id_pendaftaran_pegawai DESC");
-                                    ?>
+
                                     <div class="row">
 
-                                        <?php foreach ($list as $l) { ?>
 
-                                            <div class="card card-widget col-12">
-                                                <div class="card-header" style="background-color:darkcyan;">
-                                                    <div class="user-block">
-                                                        <img class="img-circle" src="<?= base_url() ?>/assets/dist/img/bnn.png" alt="User Image">
-                                                        <span class="username"><a href="#" style="color:white;">Pendaftaran</a></span>
-                                                        <span class="description" style="color:white;">Tanggal pendaftaran <?php echo $l['tgl_pendaftaran']; ?></span>
-                                                    </div>
-                                                    <!-- /.user-block -->
-                                                    <div class="card-tools">
-                                                        <button type="button" class="btn btn-tool" data-toggle="tooltip" title="Mark as read">
-                                                            <i class="far fa-circle"></i></button>
-                                                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                                                        </button>
-                                                    </div>
-                                                    <!-- /.card-tools -->
-                                                </div>
-                                                <!-- /.card-header -->
-                                                <div class="card-body">
-                                                    <div class="col-12">
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <tbody style="background-color: white">
-                                                                    <ul>
-                                                                        <b>
-                                                                            <li>KTP : <br><img style="text-align: center;" width="250px" height="150px" src="<?= base_url() ?>/filektp/<?= $l['ktp'] ?>"></li>
-                                                                            <li>PAS FOTO : <br><img style="text-align: center;" width="150px" height="250px" src="<?= base_url() ?>/filefoto/<?= $l['foto'] ?>"></li>
-                                                                        </b>
-                                                                    </ul>
-                                                                </tbody>
-                                                            </div>
-                                                            <!-- /.card -->
-                                                            <div class="col-6">
-                                                                <h2><b>Nomor Antrian Anda : <?= $l['nomor_antrian'] ?></b></h2>
-                                                                <h5>
-                                                                    <li>Keterangan : <?= $l['ket'] ?></li>
-                                                                    <li>Perihal : <?= $l['perihal'] ?></li>
-                                                                    <li>Tanggal Dibuat :
-                                                                        <?php
-                                                                        if ($l['tgl_buat'] == NULL) {
-                                                                            echo "<u>Menunggu Informasi</u>";
-                                                                        } else {
-                                                                            echo "Proses pembuatan pada, " . "<b>" . $l['tgl_buat'] . "</b>";
-                                                                        }
-
-                                                                        ?>
-                                                                    </li>
-                                                                    <li>Status : <b><?= $l['status_pendaftaran'] ?></b></li>
-                                                                    <?php if ($l['status_pendaftaran'] == 'Dapat Diambil') { ?>
-                                                                        <li>Tanggal Ambil : <b><?= $l['tgl_ambil'] ?></b></li>
-                                                                    <?php } ?>
-                                                                    <br>
-                                                                    <?php if ($l['status_pendaftaran'] == 'Menunggu Antrian') { ?>
-                                                                        <li><a href="hapus?id=<?= $l['id_pendaftaran'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i> Batalkan Pendaftaran</a></li>
-                                                                    <?php } else {
-                                                                    } ?>
-
-                                                                </h5>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.card -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- post text -->
-                                        <?php } ?>
-
+                                        <div class="table-responsive">
+                                            <table id="example1" class="table table-bordered table-striped">
+                                                <thead class="bg-info">
+                                                    <tr align="center">
+                                                        <th>No</th>
+                                                        <th>Nomor Antrian</th>
+                                                        <th>Kolektif</th>
+                                                        <th>Nama</th>
+                                                        <th>KTP</th>
+                                                        <th>PAS FOTO</th>
+                                                        <th>Ket</th>
+                                                        <th>Perihal</th>
+                                                        <th>Tanggal</th>
+                                                        <th>Opsi</th>
+                                                    </tr>
+                                                </thead>
+                                                <?php
+                                                $no = 1;
+                                                $data = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
+                                            LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
+                                            LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan
+                                            WHERE p.id_perusahaan = '$_SESSION[id_perusahaan]'
+                                            ");
+                                                while ($row = $data->fetch_array()) {
+                                                ?>
+                                                    <tbody style="background-color: white">
+                                                        <tr>
+                                                            <td align="center"><?= $no++ ?></td>
+                                                            <td align="center">
+                                                                <h1><?= $row['nomor_antrian'] ?></h1>
+                                                            </td>
+                                                            <td align="center">
+                                                                <h3><?= $row['nama_perusahaan'] ?></h3>
+                                                            </td>
+                                                            <td align="center">
+                                                                <h4><?= $row['nama_pegawai'] ?></h4>
+                                                            </td>
+                                                            <td>
+                                                                <a href="<?= base_url(); ?>/filektp/<?= $row['ktp'] ?>" data-toggle="lightbox" data-title="ktp" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat KTP</i></a>
+                                                            </td>
+                                                            <td> <a href="<?= base_url(); ?>/filefoto/<?= $row['foto'] ?>" data-toggle="lightbox" data-title="foto" data-gallery="galery" title="Lihat" target="blank"><i class="fa fa-file-archive"> Lihat Foto</i></a></td>
+                                                            <td><?= $row['ket'] ?></td>
+                                                            <td><?= $row['perihal'] ?></td>
+                                                            <td>Tanggal Pendaftaran : <?= $row['tgl_pendaftaran'] ?>
+                                                            </td>
+                                                            <td>
+                                                                <a href="hapus?id=<?= $row['id_pendaftaran_pegawai'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-times"></i> Batalkan</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                <?php } ?>
+                                            </table>
+                                        </div>
                                     </div>
                                     <!-- /.card-body -->
                                 </div>

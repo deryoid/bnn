@@ -88,6 +88,7 @@ include '../../templates/head.php';
                                             $data = $koneksi->query("SELECT * FROM pendaftaran_pegawai AS p
                                             LEFT JOIN pegawai AS pl ON p.id_pegawai = pl.id_pegawai
                                             LEFT JOIN perusahaan AS pr ON pl.id_perusahaan = pr.id_perusahaan
+                                            WHERE p.id_perusahaan = '$_SESSION[id_perusahaan]'
                                             ");
                                             while ($row = $data->fetch_array()) {
                                             ?>

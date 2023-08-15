@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Waktu pembuatan: 28 Jul 2023 pada 11.49
+-- Waktu pembuatan: 15 Agu 2023 pada 12.24
 -- Versi server: 5.7.34
 -- Versi PHP: 7.4.21
 
@@ -221,7 +221,13 @@ INSERT INTO `masyarakat` (`id_masyarakat`, `id_user`, `nama_masyarakat`, `nik`, 
 (7, 5, 'Muhammad Yazid Zidane', '6308332454666781', 'yazid@gmail.com', 'Laki - Laki', 'jl. Brig Jend Hasan Basri no.44 kec banjarmasin utara', 'Belum Bekerja', '081978651221', 'Aktif'),
 (8, 6, 'rio saputra', '6308779034432362', 'saputra112@gmail.com', 'Laki - Laki', 'jl. A. Yani kec martapura no 112', 'Belum Bekerja', '082344455665', 'Aktif'),
 (9, 7, 'Vidia Aisha', '63060941040100002', 'vidiaaisha@gmail.com', 'Perempuan', 'Gg. Purnama 2 no 4 kec banjarbaru utara', 'Sudah Bekerja', '081950332145', 'Aktif'),
-(10, 8, 'Muhammad Hafi Arisandi', '6306633001008990', 'arisandi31@gmail.com', 'Laki - Laki', 'jl. pemajatan no 55 kec gambut', 'Belum Bekerja', '087899903122', 'Aktif');
+(10, 8, 'Muhammad Hafi Arisandi', '6306633001008990', 'arisandi31@gmail.com', 'Laki - Laki', 'jl. pemajatan no 55 kec gambut', 'Belum Bekerja', '087899903122', 'Aktif'),
+(14, 16, 'Puspa Yuka Pramesthy', '630878650002332', 'yukaprmsthy@gmail.com', 'Perempuan', 'Landasan Ulin', 'Ahli Gizi', '082344250111', 'Aktif'),
+(15, 17, 'Arsyad Ary', '6306094104010001', 'aryarsyad@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Mahasiswa', '081950331145', 'Aktif'),
+(16, 18, 'Aldy Rahman', '630833240000722', 'Aldy2133@gmail.com', 'Laki - Laki', 'Banjarmasin Barat', 'Operator DT', '081998588122', 'Aktif'),
+(17, 19, 'Rafli Irawan', '6308788031430000', 'rafli@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Mahasiswa', '087858303122', 'Aktif'),
+(18, 20, 'Khusnul Khatimah', '6308779030000062', 'Khsunulkh@gmail.com', 'Perempuan', 'Banjarmasin Barat', 'Perawat', '089868332145', 'Aktif'),
+(19, 21, 'deryjaya', '61237123812381230', 'dery.education@gmail.com', 'Laki-Laki', 'Banjarmasin', 'IT', '0812328392939', 'Tidak Aktif');
 
 -- --------------------------------------------------------
 
@@ -246,7 +252,17 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `id_perusahaan`, `nama_pegawai`, `nik`, `email`, `jk`, `alamat`, `pekerjaan`, `no_wa`) VALUES
-(12, 11, 'Sonny Raymon', '621312734812939', 'sonny@gmail.com', 'Laki-Laki', 'Banjarmasin', 'Teknisi', '021562737288');
+(13, 0, 'Fitriyadi', '63455531460120004', 'fitriyadi@gmail.com', 'laki-laki', 'Jalan AHmad Yani Km 13, Gambut', 'Direktur', '081998588147'),
+(14, 13, 'VIta Aryani', '63455531460111003', 'Vitttt22@gmail.com', 'Perempuan', 'Pemurus Dalam', 'Sekretaris', '0823503331326'),
+(15, 13, 'Haris Sanjaya', '63455531262111022', 'harissanjaya@gmail.com', 'laki-laki', 'Kuripan', 'sales', '081999423313'),
+(17, 13, 'Aldy fadilah', '63455531262330003', 'fadilah333@gmail.com', 'laki-laki', 'Jalan Ahmad Yani Km 12', 'sales', '082341331200'),
+(18, 13, 'Rino', '63455531460111001', 'Rino@gmail.com', 'laki-laki', 'Jalan Pematang komp. Dinarmas no 11', 'sales', '082341166858'),
+(19, 14, 'Ahmad Dandy Ariyandi', '63087815340002', 'dandy@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Direktur', '082344885665'),
+(20, 14, 'Adrikny Jannatika', '6308788031000011', 'Adrikny11@gmail.com', 'Perempuan', 'Banjarmasin Barat', 'Sektretaris', '081928588547'),
+(21, 14, 'Malinda Utami Puteri', '63060940014010002', 'elin22@gmail.com', 'Perempuan', 'Teluk Dalam', 'Bendahara', '081950002145'),
+(22, 14, 'Muamar Arif', '6308332454000081', 'muamararif19@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Pegawai', '087899003122'),
+(23, 14, 'Muhammad Deny', '6308779034432000', 'deny55@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Pegawai', '081978651228'),
+(24, 14, 'Dimas Saputra', '6308330000666781', 'Dimasmas@gmail.com', 'Laki - Laki', 'Banjarmasin', 'Pegawai', '082300005665');
 
 -- --------------------------------------------------------
 
@@ -276,10 +292,15 @@ CREATE TABLE `pendaftaran` (
 
 INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_masyarakat`, `id_kecamatan`, `nomor_antrian`, `ktp`, `foto`, `tgl_pendaftaran`, `tgl_buat`, `tgl_ambil`, `ket`, `perihal`, `hasil_tes`, `status_pendaftaran`) VALUES
 (1, 6, 144, '001', '35113.jpeg', '14634.jpeg', '2023-02-12', '2023-02-13', '2023-02-13', 'membuat surat keterangan bebas narkoba ', 'melamar pekerjaan\r\n', 'Positif', 'Selesai'),
-(3, 7, 146, '002', '18286.jpeg', '62730.jpeg', '2023-02-12', NULL, NULL, 'membuat surat bebas narkoba', 'Calon Bintara Polri tahun 2023', 'Positif', 'Menunggu Antrian'),
-(4, 8, 5, '003', '84838.jpeg', '77531.jpeg', '2023-02-12', NULL, NULL, 'membuat surat bebas narkoba', 'MCU', 'Positif', 'Menunggu Antrian'),
-(5, 9, 150, '004', '3535.jpeg', '84606.JPG', '2023-02-12', NULL, NULL, 'surat bebas narkoba', 'untuk MCU', 'Positif', 'Menunggu Antrian'),
-(6, 10, 2, '005', '93529.jpeg', '66252.jpeg', '2023-02-12', NULL, NULL, 'membuat surat keterangan bebas narkoba', 'mendaftar akbri 2023', 'Positif', 'Menunggu Antrian');
+(3, 7, 146, '002', '18286.jpeg', '62730.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat bebas narkoba', 'Calon Bintara Polri tahun 2023', 'Positif', 'Selesai'),
+(4, 8, 5, '003', '84838.jpeg', '77531.jpeg', '2023-02-12', '2023-08-14', '2023-08-16', 'membuat surat bebas narkoba', 'MCU', 'Negatif', 'Selesai'),
+(5, 9, 150, '004', '3535.jpeg', '84606.JPG', '2023-02-12', '2023-08-14', '2023-08-15', 'surat bebas narkoba', 'untuk MCU', 'Positif', 'Selesai'),
+(6, 10, 2, '005', '93529.jpeg', '66252.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat keterangan bebas narkoba', 'mendaftar akbri 2023', 'Negatif', 'Selesai'),
+(7, 14, 148, '001', '78174.jpeg', '47966.JPG', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan\r\n', 'Negatif', 'Selesai'),
+(8, 18, 145, '002', '8334.jpeg', '99205.jpg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan', 'Negatif', 'Selesai'),
+(9, 15, 143, '003', '24359.jpeg', '93786.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Bebas Narkoba', 'Melamar Pekerjaan\r\n', 'Negatif', 'Selesai'),
+(10, 16, 145, '004', '55082.jpeg', '11948.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'MCU \r\n', 'Positif', 'Selesai'),
+(11, 17, 144, '005', '8104.jpeg', '84046.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Melamar Pekerjaan', 'Positif', 'Selesai');
 
 -- --------------------------------------------------------
 
@@ -308,7 +329,49 @@ CREATE TABLE `pendaftaran_pegawai` (
 --
 
 INSERT INTO `pendaftaran_pegawai` (`id_pendaftaran_pegawai`, `id_perusahaan`, `id_pegawai`, `nomor_antrian`, `ktp`, `foto`, `tgl_pendaftaran`, `tgl_buat`, `tgl_ambil`, `ket`, `perihal`, `hasil_tes`, `status_pendaftaran`) VALUES
-(7, 11, 12, '001', '35359.jpeg', '42015.jpeg', '2023-07-28', '2023-07-28', '2023-07-28', '-', '-', 'Negatif', 'Selesai');
+(7, 11, 12, '001', '35359.jpeg', '42015.jpeg', '2023-07-28', '2023-07-28', '2023-07-31', '-', '-', 'Negatif', 'Selesai'),
+(8, 11, 12, '001', '', '', '2023-08-13', NULL, NULL, '123', '123', NULL, 'Menunggu Antrian'),
+(9, 11, 12, '002', '', '', '2023-08-13', NULL, NULL, '123', '123', NULL, 'Menunggu Antrian'),
+(10, 13, 14, '001', '12500.jpeg', '13881.jpg', '2023-08-14', '2023-08-14', '2023-08-15', 'Tes Urine ', 'Bebas Narkoba', 'Negatif', 'Selesai'),
+(11, 13, 15, '002', '3020.jpeg', '57910.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Tes Urine', 'Bebas Narkoba\r\n', 'Negatif', 'Selesai'),
+(12, 13, 17, '003', '39086.jpeg', '5983.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Tes Urine', 'Bebas Narkoba', 'Negatif', 'Selesai'),
+(13, 13, 18, '004', '1882.jpeg', '18830.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Tes Urine', 'Bebas Narkoba\r\n', 'Negatif', 'Selesai'),
+(14, 14, 19, '005', '24879.jpeg', '60605.jpeg', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba\r\n', NULL, 'Menunggu Antrian'),
+(15, 14, 20, '006', '13292.jpeg', '45102.JPG', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba\r\n', NULL, 'Menunggu Antrian'),
+(16, 14, 21, '007', '40532.jpeg', '65369.jpg', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba', NULL, 'Menunggu Antrian'),
+(17, 14, 22, '008', '69786.jpeg', '92013.jpeg', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba', NULL, 'Menunggu Antrian'),
+(18, 14, 23, '009', '54628.jpeg', '12871.jpeg', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba', NULL, 'Menunggu Antrian'),
+(19, 14, 24, '010', '29029.jpeg', '49449.jpeg', '2023-08-14', NULL, NULL, 'Tes Urine', 'Bebas Narkoba', NULL, 'Menunggu Antrian');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `penyuluhan`
+--
+
+CREATE TABLE `penyuluhan` (
+  `id_penyuluhan` int(11) NOT NULL,
+  `nama_kegiatan` varchar(255) NOT NULL,
+  `tanggal_kegiatan` varchar(255) NOT NULL,
+  `lokasi_kegiatan` varchar(255) NOT NULL,
+  `deskripsi_kegiatan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `penyuluhan`
+--
+
+INSERT INTO `penyuluhan` (`id_penyuluhan`, `nama_kegiatan`, `tanggal_kegiatan`, `lokasi_kegiatan`, `deskripsi_kegiatan`) VALUES
+(3, 'Penyuluhan NARKOBA', '2023-08-21', 'SMA BANUA KALSEL', 'Menambah wawasan dan pengetahuan'),
+(4, 'Penyuluhan NARKOBA', '2023-08-23', 'SMKN 1 Gambut', 'Menambah wawasan dan pengetahuan'),
+(5, 'Penyuluhan NARKOBA', '2023-08-25', 'MAN 2 Banjarmasin', 'Menambah wawasan dan pengetahuan '),
+(6, 'Penyuluhan NARKOBA', '2023-08-28', 'SMA Kristen Kanaan Banjarmasin', 'Menambah wawasan dan pengetahuan'),
+(7, 'Penyuluhan NARKOBA', '2023-08-30', 'SMA 2 Banjarmasin', 'Menambah wawasan dan pengetahuan'),
+(8, 'Penyuluhan NARKOBA', '2023-08-31', 'SMA 4 Banjarmasin', 'Menambah wawasan dan pengetahuan'),
+(9, 'Penyuluhan NARKOBA', '2023-09-04', 'SMK  Farmasi Mandiri', 'Menambah wawasan dan pengetahuan'),
+(10, 'Penyuluhan NARKOBA', '2023-09-06', 'SMKN 1 Banjarmasin', 'Menambah wawasan dan pengetahuan'),
+(11, 'Penyuluhan NARKOBA', '2023-09-11', 'SMKN 5 Banjarmasin', 'Menambah wawasan dan pengetahuan'),
+(12, 'Penyuluhan NARKOBA', '2023-09-18', 'Kantor Kelurahan Teluk Dalam', 'Memberikan pemahaman penyalahgunaan dan peredaran gelap narkoba');
 
 -- --------------------------------------------------------
 
@@ -321,11 +384,11 @@ CREATE TABLE `perusahaan` (
   `id_user` int(11) DEFAULT NULL,
   `nama_perusahaan` varchar(255) DEFAULT NULL,
   `nama_pimpinan` varchar(150) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
+  `email_perusahaan` varchar(255) DEFAULT NULL,
   `jenis` varchar(11) DEFAULT NULL,
-  `alamat` text,
+  `alamat_perusahaan` text,
   `bidang` varchar(150) DEFAULT NULL,
-  `no_wa` varchar(25) DEFAULT NULL,
+  `no_perusahaan` varchar(25) DEFAULT NULL,
   `status` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -333,8 +396,11 @@ CREATE TABLE `perusahaan` (
 -- Dumping data untuk tabel `perusahaan`
 --
 
-INSERT INTO `perusahaan` (`id_perusahaan`, `id_user`, `nama_perusahaan`, `nama_pimpinan`, `email`, `jenis`, `alamat`, `bidang`, `no_wa`, `status`) VALUES
-(11, 9, 'Lintas Arta', 'Sugeng Raharja, S.T., M.Eng', 'office@lintasarta.id', 'PT', 'Jakarta, Sub div Banjarmasin', 'Telekomunikasi', '021562737288', 'Aktif');
+INSERT INTO `perusahaan` (`id_perusahaan`, `id_user`, `nama_perusahaan`, `nama_pimpinan`, `email_perusahaan`, `jenis`, `alamat_perusahaan`, `bidang`, `no_perusahaan`, `status`) VALUES
+(11, 9, 'Lintas Arta', 'Sugeng Raharja, S.T., M.Eng', 'office@lintasarta.id', 'PT', 'Jakarta, Sub div Banjarmasin', 'Telekomunikasi', '021562737288', 'Aktif'),
+(12, 10, 'nagaasia', 'Dr. Eng. Assoc Entalo Bagaskara, MC.s', 'naga_asia@tagalog.sg', 'PT', 'Singapore', 'Pertambangan Minyak', '+1293923002', 'Aktif'),
+(13, 13, 'Universal Motor Asia', 'Fitriyadi', 'universalmotors@gmail.com', 'CV', 'Jalan Ahmad Yani Km 13, Gambut', 'Toko Spare Part Hino', '(0511)66735881', 'Aktif'),
+(14, 14, 'Banua Jaya Mandiri', NULL, NULL, NULL, NULL, NULL, NULL, 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -360,7 +426,16 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `role`) VALUES
 (6, 'rio', 'd5ed38fdbf28bc4e58be142cf5a17cf5', 'Masyarakat'),
 (7, 'vidia', '79aab6b4c6a16420f3cf787e06ead856', 'Masyarakat'),
 (8, 'hafi', 'f85f10fdcd7d8c36f39b5497ac152d89', 'Masyarakat'),
-(9, 'lintasarta', '827ccb0eea8a706c4c34a16891f84e7b', 'Perusahaan');
+(10, 'nagaasia', '827ccb0eea8a706c4c34a16891f84e7b', 'Perusahaan'),
+(12, 'jamruni', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(13, 'universalmotor', '9d8d15211aa3fa9e4cc1da427d710ea1', 'Perusahaan'),
+(14, 'Banua Jaya Mandiri', '827ccb0eea8a706c4c34a16891f84e7b', 'Perusahaan'),
+(16, 'Puspa Yuka Pramesthy', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(17, 'Arsyad Ary', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(18, 'Aldy Rahman', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(19, 'Rafli Irawan', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(20, 'Khusnul Khatimah', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat'),
+(21, 'deryjaya', '4c233239286bb3482a7bd3b1a7ddd1f8', 'Masyarakat');
 
 --
 -- Indexes for dumped tables
@@ -403,6 +478,12 @@ ALTER TABLE `pendaftaran_pegawai`
   ADD KEY `id_perusahaan` (`id_perusahaan`);
 
 --
+-- Indeks untuk tabel `penyuluhan`
+--
+ALTER TABLE `penyuluhan`
+  ADD PRIMARY KEY (`id_penyuluhan`);
+
+--
 -- Indeks untuk tabel `perusahaan`
 --
 ALTER TABLE `perusahaan`
@@ -429,37 +510,43 @@ ALTER TABLE `kecamatan`
 -- AUTO_INCREMENT untuk tabel `masyarakat`
 --
 ALTER TABLE `masyarakat`
-  MODIFY `id_masyarakat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_masyarakat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendaftaran_pegawai`
 --
 ALTER TABLE `pendaftaran_pegawai`
-  MODIFY `id_pendaftaran_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pendaftaran_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT untuk tabel `penyuluhan`
+--
+ALTER TABLE `penyuluhan`
+  MODIFY `id_penyuluhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `perusahaan`
 --
 ALTER TABLE `perusahaan`
-  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

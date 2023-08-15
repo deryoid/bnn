@@ -60,7 +60,7 @@ include '../../templates/head.php';
                                     <!-- form start -->
                                     <div class="card-body" style="background-color: white;">
 
-                                        <input type="text" class="form-control" name="id_perusahaan" value="<?= $_SESSION['id_perusahaan'] ?>">
+                                        <input type="hidden" class="form-control" name="id_perusahaan" value="<?= $_SESSION['id_perusahaan'] ?>">
                                         <div class="form-group row">
                                             <label for="" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                             <div class="col-sm-10">
