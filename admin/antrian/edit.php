@@ -92,7 +92,8 @@ include '../../templates/head.php';
 
                                                                     ?>
                                                                 </td>
-                                                                <td><b>Status : <?= $row['status_pendaftaran'] ?></b></td> <br>
+                                                                <td><b>Status : <?= $row['status_pendaftaran'] ?></b></td>
+                                                                <td><b>Biaya : <?= $row['biaya'] ?></b></td> <br>
                                                             </b>
                                                         </tr>
                                                     </tbody>

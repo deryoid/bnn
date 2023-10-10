@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Waktu pembuatan: 15 Agu 2023 pada 12.24
+-- Waktu pembuatan: 10 Okt 2023 pada 08.22
 -- Versi server: 5.7.34
 -- Versi PHP: 7.4.21
 
@@ -252,7 +252,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id_pegawai`, `id_perusahaan`, `nama_pegawai`, `nik`, `email`, `jk`, `alamat`, `pekerjaan`, `no_wa`) VALUES
-(13, 0, 'Fitriyadi', '63455531460120004', 'fitriyadi@gmail.com', 'laki-laki', 'Jalan AHmad Yani Km 13, Gambut', 'Direktur', '081998588147'),
+(13, 13, 'Fitriyadi', '63455531460120004', 'fitriyadi@gmail.com', 'laki-laki', 'Jalan AHmad Yani Km 13, Gambut', 'Direktur', '081998588147'),
 (14, 13, 'VIta Aryani', '63455531460111003', 'Vitttt22@gmail.com', 'Perempuan', 'Pemurus Dalam', 'Sekretaris', '0823503331326'),
 (15, 13, 'Haris Sanjaya', '63455531262111022', 'harissanjaya@gmail.com', 'laki-laki', 'Kuripan', 'sales', '081999423313'),
 (17, 13, 'Aldy fadilah', '63455531262330003', 'fadilah333@gmail.com', 'laki-laki', 'Jalan Ahmad Yani Km 12', 'sales', '082341331200'),
@@ -283,24 +283,26 @@ CREATE TABLE `pendaftaran` (
   `ket` text,
   `perihal` text,
   `hasil_tes` varchar(20) DEFAULT NULL,
-  `status_pendaftaran` varchar(100) DEFAULT NULL
+  `status_pendaftaran` varchar(100) DEFAULT NULL,
+  `biaya` varchar(70) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `pendaftaran`
 --
 
-INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_masyarakat`, `id_kecamatan`, `nomor_antrian`, `ktp`, `foto`, `tgl_pendaftaran`, `tgl_buat`, `tgl_ambil`, `ket`, `perihal`, `hasil_tes`, `status_pendaftaran`) VALUES
-(1, 6, 144, '001', '35113.jpeg', '14634.jpeg', '2023-02-12', '2023-02-13', '2023-02-13', 'membuat surat keterangan bebas narkoba ', 'melamar pekerjaan\r\n', 'Positif', 'Selesai'),
-(3, 7, 146, '002', '18286.jpeg', '62730.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat bebas narkoba', 'Calon Bintara Polri tahun 2023', 'Positif', 'Selesai'),
-(4, 8, 5, '003', '84838.jpeg', '77531.jpeg', '2023-02-12', '2023-08-14', '2023-08-16', 'membuat surat bebas narkoba', 'MCU', 'Negatif', 'Selesai'),
-(5, 9, 150, '004', '3535.jpeg', '84606.JPG', '2023-02-12', '2023-08-14', '2023-08-15', 'surat bebas narkoba', 'untuk MCU', 'Positif', 'Selesai'),
-(6, 10, 2, '005', '93529.jpeg', '66252.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat keterangan bebas narkoba', 'mendaftar akbri 2023', 'Negatif', 'Selesai'),
-(7, 14, 148, '001', '78174.jpeg', '47966.JPG', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan\r\n', 'Negatif', 'Selesai'),
-(8, 18, 145, '002', '8334.jpeg', '99205.jpg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan', 'Negatif', 'Selesai'),
-(9, 15, 143, '003', '24359.jpeg', '93786.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Bebas Narkoba', 'Melamar Pekerjaan\r\n', 'Negatif', 'Selesai'),
-(10, 16, 145, '004', '55082.jpeg', '11948.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'MCU \r\n', 'Positif', 'Selesai'),
-(11, 17, 144, '005', '8104.jpeg', '84046.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Melamar Pekerjaan', 'Positif', 'Selesai');
+INSERT INTO `pendaftaran` (`id_pendaftaran`, `id_masyarakat`, `id_kecamatan`, `nomor_antrian`, `ktp`, `foto`, `tgl_pendaftaran`, `tgl_buat`, `tgl_ambil`, `ket`, `perihal`, `hasil_tes`, `status_pendaftaran`, `biaya`) VALUES
+(1, 6, 144, '001', '35113.jpeg', '14634.jpeg', '2023-02-12', '2023-02-13', '2023-02-13', 'membuat surat keterangan bebas narkoba ', 'melamar pekerjaan\r\n', 'Positif', 'Selesai', NULL),
+(3, 7, 146, '002', '18286.jpeg', '62730.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat bebas narkoba', 'Calon Bintara Polri tahun 2023', 'Positif', 'Selesai', NULL),
+(4, 8, 5, '003', '84838.jpeg', '77531.jpeg', '2023-02-12', '2023-08-14', '2023-08-16', 'membuat surat bebas narkoba', 'MCU', 'Negatif', 'Selesai', NULL),
+(5, 9, 150, '004', '3535.jpeg', '84606.JPG', '2023-02-12', '2023-08-14', '2023-08-15', 'surat bebas narkoba', 'untuk MCU', 'Positif', 'Selesai', NULL),
+(6, 10, 2, '005', '93529.jpeg', '66252.jpeg', '2023-02-12', '2023-08-14', '2023-08-15', 'membuat surat keterangan bebas narkoba', 'mendaftar akbri 2023', 'Negatif', 'Selesai', NULL),
+(7, 14, 148, '001', '78174.jpeg', '47966.JPG', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan\r\n', 'Negatif', 'Selesai', NULL),
+(8, 18, 145, '002', '8334.jpeg', '99205.jpg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Lamaran Pekerjaan', 'Negatif', 'Selesai', NULL),
+(9, 15, 143, '003', '24359.jpeg', '93786.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Bebas Narkoba', 'Melamar Pekerjaan\r\n', 'Negatif', 'Selesai', NULL),
+(10, 16, 145, '004', '55082.jpeg', '11948.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'MCU \r\n', 'Positif', 'Selesai', NULL),
+(11, 17, 144, '005', '8104.jpeg', '84046.jpeg', '2023-08-14', '2023-08-14', '2023-08-15', 'Surat Bebas Narkoba', 'Melamar Pekerjaan', 'Positif', 'Selesai', NULL),
+(12, 9, 2, '001', '11238.jpeg', '23394.jpeg', '2023-10-10', '2023-10-10', '2023-10-11', 'Test', 'Test', 'Positif', 'Selesai', '5 zat Rp .275.000');
 
 -- --------------------------------------------------------
 
@@ -405,6 +407,26 @@ INSERT INTO `perusahaan` (`id_perusahaan`, `id_user`, `nama_perusahaan`, `nama_p
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tim_pelaksana`
+--
+
+CREATE TABLE `tim_pelaksana` (
+  `id_tp` int(11) NOT NULL,
+  `id_penyuluhan` int(11) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `tugas` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data untuk tabel `tim_pelaksana`
+--
+
+INSERT INTO `tim_pelaksana` (`id_tp`, `id_penyuluhan`, `nama`, `tugas`) VALUES
+(5, 3, 'Bayu', 'Penyuluh');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -491,6 +513,13 @@ ALTER TABLE `perusahaan`
   ADD KEY `id_user` (`id_user`);
 
 --
+-- Indeks untuk tabel `tim_pelaksana`
+--
+ALTER TABLE `tim_pelaksana`
+  ADD PRIMARY KEY (`id_tp`),
+  ADD KEY `id_penyuluhan` (`id_penyuluhan`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -522,7 +551,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT untuk tabel `pendaftaran`
 --
 ALTER TABLE `pendaftaran`
-  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pendaftaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pendaftaran_pegawai`
@@ -541,6 +570,12 @@ ALTER TABLE `penyuluhan`
 --
 ALTER TABLE `perusahaan`
   MODIFY `id_perusahaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `tim_pelaksana`
+--
+ALTER TABLE `tim_pelaksana`
+  MODIFY `id_tp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`

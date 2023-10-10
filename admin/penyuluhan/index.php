@@ -91,7 +91,7 @@ include '../../templates/head.php';
                                                         <td><?= $row['lokasi_kegiatan'] ?></td>
                                                         <td><?= $row['deskripsi_kegiatan'] ?></td>
                                                         <td align="center">
-                                                            <!-- <a href="edit?id=<?= $row['id_penyuluhan'] ?>" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-edit"></i></a> -->
+                                                            <a href="detail?id=<?= $row['id_penyuluhan'] ?>" class="btn btn-info btn-sm" title="Info"><i class="fa fa-users"></i> </a>
                                                             <a href="hapus?id=<?= $row['id_penyuluhan'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i></a>
 
                                                         </td>

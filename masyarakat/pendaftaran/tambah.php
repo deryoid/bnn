@@ -138,7 +138,17 @@ $no_antri = set_nomor_antri($ambilnomor);
                                                 <textarea type="text" class="form-control" name="perihal"></textarea>
                                             </div>
                                         </div>
-
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label">Biaya</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control select2" data-placeholder="Keterangan Biaya" id="role" name="biaya" required="">
+                                                    <option value="">-Pilih-</option>
+                                                    <option value="5 zat Rp .275.000">5 zat Rp .275.000</option>
+                                                    <option value="6 zat Rp.375.000">6 zat Rp.375.000</option>
+                                                    <option value="7 zat Rpp.475.000">7 zat Rpp.475.000</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- /.card-body -->
 
@@ -184,6 +194,7 @@ $no_antri = set_nomor_antri($ambilnomor);
         $tgl_pendaftaran          = $_POST['tgl_pendaftaran'];
         $ket                      = $_POST['ket'];
         $perihal                      = $_POST['perihal'];
+        $biaya                      = $_POST['biaya'];
 
         if (!empty($_FILES['ktp']['name'])) {
 
@@ -310,7 +321,8 @@ $no_antri = set_nomor_antri($ambilnomor);
             '$ket',
             '$perihal',
             NULL,
-            'Menunggu Antrian'
+            'Menunggu Antrian',
+            '$biaya'
             )");
         // var_dump($submit, $koneksi->error);
         // die();

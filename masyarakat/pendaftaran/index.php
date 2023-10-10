@@ -69,7 +69,7 @@ include '../../templates/head.php';
                                     <?php
                                     $list = $koneksi->query("SELECT * FROM pendaftaran AS p
                                             LEFT JOIN masyarakat AS pl ON p.id_masyarakat = pl.id_masyarakat 
-                                            WHERE p.status_pendaftaran != 'Selesai' AND p.id_masyarakat = '$_SESSION[id_masyarakat]' ORDER BY p.id_pendaftaran DESC");
+                                            WHERE  p.id_masyarakat = '$_SESSION[id_masyarakat]' ORDER BY p.id_pendaftaran DESC");
                                     ?>
                                     <div class="row">
 
@@ -123,15 +123,20 @@ include '../../templates/head.php';
 
                                                                         ?>
                                                                     </li>
-                                                                    <li>Status : <b><?= $l['status_pendaftaran'] ?></b></li>
-                                                                    <?php if ($l['status_pendaftaran'] == 'Dapat Diambil') { ?>
-                                                                        <li>Tanggal Ambil : <b><?= $l['tgl_ambil'] ?></b></li>
-                                                                    <?php } ?>
-                                                                    <br>
-                                                                    <?php if ($l['status_pendaftaran'] == 'Menunggu Antrian') { ?>
-                                                                        <li><a href="hapus?id=<?= $l['id_pendaftaran'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i> Batalkan Pendaftaran</a></li>
-                                                                    <?php } else {
-                                                                    } ?>
+                                                                    <li>Biaya : <?= $l['biaya'] ?> <?php if ($l['status_pendaftaran'] != 'Menunggu Antrian') { ?>
+                                                                            <i class="fa fa-check"> Sudah Dibayar</i>
+                                                                    </li>
+                                                                <?php } ?>
+
+                                                                <li>Status : <b><?= $l['status_pendaftaran'] ?></b></li>
+                                                                <?php if ($l['status_pendaftaran'] == 'Selesai') { ?>
+                                                                    <li>Tanggal Ambil : <b><?= $l['tgl_ambil'] ?></b> <a href="surathasiltes?id=<?= $l['id_pendaftaran'] ?>" target="blank" class="btn btn-success btn-sm" title="Edit"><i class="fa fa-print"></i> Cetak Hasil Tes </a> </li>
+                                                                <?php } ?>
+                                                                <br>
+                                                                <?php if ($l['status_pendaftaran'] == 'Menunggu Antrian') { ?>
+                                                                    <li><a href="hapus?id=<?= $l['id_pendaftaran'] ?>" class="btn btn-danger btn-sm alert-hapus" title="Hapus"><i class="fa fa-trash"></i> Batalkan Pendaftaran</a></li>
+                                                                <?php } else {
+                                                                } ?>
 
                                                                 </h5>
                                                             </div>
